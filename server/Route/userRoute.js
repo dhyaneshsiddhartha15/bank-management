@@ -1,0 +1,12 @@
+const express = require("express");
+const userRouter=express.Router();
+const {register, login, logout, checkAuthenticated}=require("../controllers/User");
+const isAuthenticatedToken = require("../middlewares/isAuthenticatedToken");
+const customerMiddleware = require("../middlewares/isCustomer");
+const { profile } = require("../controllers/Account");
+userRouter.post('/users/register',register);
+userRouter.post('/users/login',login);
+userRouter.post('/users/logout',logout);
+userRouter.get('/users/checkAuth',isAuthenticatedToken.auth,checkAuthenticated);
+userRouter.get('/users/profile',isAuthenticatedToken.auth,profile);
+module.exports=userRouter;

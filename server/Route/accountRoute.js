@@ -1,0 +1,13 @@
+const express = require("express");
+const { deposit, withdraw, getAccounts, getAccountByUser, getAccountsByUserId, getAllTransactions, getAllTransactionsBank } = require("../controllers/Account");
+const customerMiddleware = require("../middlewares/isCustomer");
+const bankerMiddleware = require("../middlewares/isBanker");
+const isAuthenticatedToken = require("../middlewares/isAuthenticatedToken");
+const accountRouter=express.Router();
+accountRouter.get('/account/gettransactions',isAuthenticatedToken.auth,customerMiddleware,getAllTransactions);
+accountRouter.post('/account/deposit',isAuthenticatedToken.auth,customerMiddleware,deposit);
+accountRouter.post('/account/withdraw',isAuthenticatedToken.auth,customerMiddleware,withdraw);
+accountRouter.get('/account/getaccounts',isAuthenticatedToken.auth,bankerMiddleware,getAccounts);
+accountRouter.get('/transactions/:userId',isAuthenticatedToken.auth,bankerMiddleware,getAccountsByUserId);
+accountRouter.get('/account/transactions',isAuthenticatedToken.auth,bankerMiddleware,getAllTransactionsBank);
+module.exports=accountRouter;
