@@ -1,4 +1,4 @@
-
+##BANK MANAGMENT SYSTEM##
 
 ## Folder Structure
 
@@ -101,4 +101,11 @@ To get started with this project, follow these steps:
 
 - **Customer Dashboard**: Accessible to bank customers for viewing account details, making deposits, and withdrawing funds.
 - **Bank Admin Dashboard**: Accessible to bank administrators for managing customer accounts, viewing transaction histories, and performing administrative tasks.
+
+- ![image](https://github.com/user-attachments/assets/541014e5-13df-4b73-a787-6e1317e4bafb)
+
+![image](https://github.com/user-attachments/assets/7425361d-ca32-415b-957d-1be0f3d68f07)
+![image](https://github.com/user-attachments/assets/955c847e-d8b3-43f8-b163-dee26a46e6af)
+
+
 
